@@ -1,0 +1,18 @@
+How to build spark with spark-sql enabled:
+    mvn -Pyarn -Phadoop-2.4 -Dhadoop.version=2.5.0 -Phive -Phive-thriftserver -DskipTests clean package
+
+How to view job history on UI after fact:
+    0. Enable history log, and specify the history server port, otherwise default: 18080
+        spark.eventLog.enabled true
+        spark.history.ui.port 11510
+
+    1. Start a history server
+    ./sbin/start-history-server.sh
+
+    2. Go to http://[master-url]:11510
+
+    misc: the default directory to store history logs: /tmp/spark-events; 
+          Only one history server can be launched at one time. 
+          Stop it by ./sbin/stop-history-server.sh beore launching a new one
+
+
