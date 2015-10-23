@@ -20,3 +20,9 @@ How to view job history on UI after fact:
           Stop it by ./sbin/stop-history-server.sh beore launching a new one
 
 
+How to setup Spark cluster at ec2-cluster:
+    Instructions: http://spark.apache.org/docs/latest/ec2-scripts.html
+    Note: (1) by default it uses m1.large which incurs fees. To change this, use --instance-type
+          (2) by default, it downloads spark from apache github page, and the default branch is 1.5.0, 
+                this can be changes by specifying --spark-git-repo and --spark-version
+
