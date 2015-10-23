@@ -1,6 +1,10 @@
 How to build spark with spark-sql enabled:
     mvn -Pyarn -Phadoop-2.4 -Dhadoop.version=2.5.0 -Phive -Phive-thriftserver -DskipTests clean package
 
+How to build a runnable distribution with spark-sql enabled:
+    ./make-distribution.sh --name custom-spark --tgz -Pyarn -Phadoop-2.4 -Dhadoop.version=2.5.0 -Phive -Phive-thriftserver
+    Then a dist/ folder will be generated and can be copied to different nodes for execution
+
 How to view job history on UI after fact:
     0. Enable history log, and specify the history server port, otherwise default: 18080
         spark.eventLog.enabled true
