@@ -26,3 +26,10 @@ How to setup Spark cluster at ec2-cluster:
           (2) by default, it downloads spark from apache github page, and the default branch is 1.5.0, 
                 this can be changes by specifying --spark-git-repo and --spark-version
 
+    E.g. here is how to setup a cluster with three slaves:
+    ./spark-ec2 -k initial-trial-key -i ../../../AWS/initial-trial-key.pem -s 3 --region=us-west-2 --zone=us-west-2a launch test
+
+    E.g. here is to setup a cluster with specific instances and spark versions:
+    ./spark-ec2 -k initial-trial-key -i ../../../AWS/initial-trial-key.pem -s 3 --region=us-west-2 --zone=us-west-2a --instance-type=m4.2xlarge --spark-git-repo=https://github.com/jaricftw/spark --spark-version=1.5.1 launch testm4
+
+
