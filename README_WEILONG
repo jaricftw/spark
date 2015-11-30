@@ -1,0 +1,15 @@
+How to run tpc-ds job with spark:
+
+1. Get the Spark SQL Perf Lib from https://github.com/databricks/spark-sql-perf
+    build with
+        sbt assembly
+
+2. Get TPC JOB from https://github.com/DistributedSystemsGroup/Spark-TPC-DS
+    fix the code to use new interfaces of SQL Perf Lib
+    build with 
+        sbt assembly
+
+3. Download TPC-DS codes
+
+3. Submit job with spark-submit
+    ./spark-submit --master local --class BenchSQLDS $TPC_JOB_HOME/spark-tpc-ds-assembly-0.0.1-SNAPSHOT.jar $HDFS_data_location 10 $HDFS_result_location 3 simple $TPC_HOME/tools
